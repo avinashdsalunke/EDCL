@@ -22,7 +22,7 @@ public class HomePageTest extends BaseTest {
 	@Severity(SeverityLevel.TRIVIAL)
 	@Description("....checking the title of the page.... tester: avinash")
 	@Test(priority=1)
-	public void homepageTitletest() {
+	public void homepageTitletest() throws InterruptedException {
 		String actual_title=homepage.gethomepageTitle();
 		Assert.assertEquals(actual_title,"WBSEDCL");
 	}
@@ -61,13 +61,17 @@ public class HomePageTest extends BaseTest {
 		
 	Assert.assertEquals(homepage.issignbuttonexist(),"Sign In");	
 	}
+	
 	@Test
 	public void Homepagecontainsregisterlink()
 	{
 		String registertext=homepage.isregisterlinkexist();
 		System.out.println(registertext);
 	Assert.assertEquals(homepage.isregisterlinkexist(),"Want to register mobile no? Click Here");	
-	}	@Test
+	}	
+	
+	
+	@Test
 	public void HomepagefooterCountTest()
 	{
 		List<String> homepagefooterlist=homepage.getfooterList();

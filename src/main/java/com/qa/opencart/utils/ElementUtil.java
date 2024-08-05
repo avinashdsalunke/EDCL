@@ -24,7 +24,6 @@ public class ElementUtil {
 
 	private WebDriver driver;
 	private JavaScriptUtil jsUtil;
-
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
 		jsUtil = new JavaScriptUtil(driver);
@@ -60,6 +59,10 @@ public class ElementUtil {
 	public void doClick(By locator) {
 		getElement(locator).click();
 	}
+	
+	public void doclick(By locator,int timeout) {
+		waitForElementVisible(locator,timeout).click();
+	}
 
 	public void doActionsCick(By locator) {
 		Actions act = new Actions(driver);
@@ -68,6 +71,11 @@ public class ElementUtil {
 
 	public String doElementGetText(By locator) {
 		return getElement(locator).getText();
+	}
+	
+	public String Elementtext(By xpath) {
+		return getElement(xpath).getText();
+		
 	}
 
 	public boolean doElementIsDisplayed(By locator) {
@@ -100,6 +108,15 @@ public class ElementUtil {
 			eleTextList.add(text);
 		}
 		return eleTextList;
+	}
+	public void waitForElementToBeClickable(By locator, int timeout) {
+	    new WebDriverWait(driver, Duration.ofSeconds(timeout))
+	        .until(ExpectedConditions.elementToBeClickable(locator));
+	}
+
+	public void waitForElementToBeVisible(By locator, int timeout) {
+	    new WebDriverWait(driver, Duration.ofSeconds(timeout))
+	        .until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 
 	// *************************Select based drop down utils****************//
@@ -254,7 +271,7 @@ public class ElementUtil {
 		return driver.getTitle();
 	}
 
-	public String waitForTitleIsAndFetch(int timeOut, String titleValue) {
+	public String waitForTitleIsAndFetch(int timeOut, String titleValue) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.titleIs(titleValue));
 		return driver.getTitle();
@@ -266,7 +283,7 @@ public class ElementUtil {
 		return driver.getCurrentUrl();
 	}
 
-	public String waitForURLIsAndFetch(int timeOut, String urlValue) {
+	public String waitForURLIsAndFetch(int timeOut, String urlValue) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.urlToBe(urlValue));
 		return driver.getCurrentUrl();

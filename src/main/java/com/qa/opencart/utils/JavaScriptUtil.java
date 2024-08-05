@@ -1,5 +1,6 @@
 package com.qa.opencart.utils;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -104,6 +105,10 @@ public class JavaScriptUtil {
 	public void drawBorder(WebElement element) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.border='3px solid red'", element);
+	}
+	public void clickElementWithJS(By locator) {
+	    WebElement element = driver.findElement(locator);
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
 	}
 	
 

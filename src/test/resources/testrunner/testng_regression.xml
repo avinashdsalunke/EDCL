@@ -13,18 +13,26 @@
 		<listener
 			class-name="com.qa.opencart.listeners.AnnotationTransformer" />
 	</listeners>
-
-
-	<test name="Login Page Test">
+	<test name="login2">
+		<classes>
+			<class name="com.qa.opencart.test.LoginPageTest1" />
+		</classes>
+	</test>
+	<test name="Login1">
 		<classes>
 			<class name="com.qa.opencart.test.HomePageTest" />
 		</classes>
 	</test>
 	
-	<test name="Account Page Test">
+	
+	<test name="login3">
 		<classes>
-			<class name="com.qa.opencart.test.LoginPageTest1" />
+			<class name="com.qa.opencart.test.lgt" />
 		</classes>
 	</test>
-	
+	<test name="login4">
+		<classes>
+			<class name="com.qa.opencart.test.Dashboardheadertest" />
+		</classes>
+	</test>
 	</suite>

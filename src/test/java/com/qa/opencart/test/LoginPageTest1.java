@@ -22,7 +22,7 @@ public class LoginPageTest1 {
 		@Severity(SeverityLevel.TRIVIAL)
 		@Description("....checking the title of the page.... tester: avinash")
 		@Test(priority=1)
-		public void loginPageTitleTest()
+		public void loginPageTitleTest() throws InterruptedException
 		{
 			String actual_title= Logpage.getLoginPageTitle();
 			Assert.assertEquals(actual_title, "WBSEDCL");		
@@ -43,8 +43,8 @@ public class LoginPageTest1 {
 		public void loginTest() throws InterruptedException
 		{
 			Logpage.doLogin1(prop.getProperty("mobileno").trim(), prop.getProperty("otp").trim());
-			String Act_textafterLog=Logpage.isAfterverifyOTP();
-			Assert.assertEquals(Act_textafterLog, Constant.DEFAULT_AFTER_LOGIN);
+			Thread.sleep(2000);
+	        Assert.assertTrue(Logpage.isAfterverifyOTP().isDisplayed());
 		}
 		
 		

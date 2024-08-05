@@ -8,7 +8,8 @@ public class Constant {
 	public static final int DEFAULT_SHORT_TIME_OUT=5;
 	public static final int DEFAULT_MEDIUM_TIME_OUT=10;
 	public static final int DEFAULT_LONG_TIME_OUT=20;
-	
+	public static final int DEFAULT_SPL_TIME_OUT=60;
+
 	public static final String LOGIN_PAGE_TITLE_VALUE="WBSEDCL";
 	public static final String LOGIN_PAGE_URL_FRACTION_VALUE="4202";
 	
@@ -23,6 +24,11 @@ public class Constant {
 	public static final String  DEFAULT_OTP="0000";
 	
 	public static final String DEFAULT_AFTER_LOGIN="Select Pre Paid Consumer";
-	public static final String REGISTER_SHEET_NAME1 = "testdatawb";
+	public static final String REGISTER_SHEET_NAME1 = "testdata1";
+	public static final String DASHBORD_TITLE_VALUE="dashboard";
+	
+	public static final List<String> EXPECTED_ACCOUNTS_PAGE_HEADERS_LIST1=Arrays.asList("Home","Billing","Usage","Complaint History","Contact Us");
+
+	public static final int ACCOUNTS_PAGE_HEADERS_COUNT1= 5 ;
 
 }

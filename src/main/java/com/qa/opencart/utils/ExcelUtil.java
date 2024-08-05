@@ -12,22 +12,24 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class ExcelUtil {
 
-	private static final String TEST_DATA_SHEET_PATH = "./src/test/resources/testdata/testdatawb.xlsx";
+	private static final String TEST_DATA_SHEET_PATH1 = "C:\\Users\\Administrator\\eclipse-workspace\\OpenCart2\\src\\test\\resources\\testdata\\testdata1.xlsx";
 	private static Workbook book;
 	private static Sheet sheet;
 
 	public static Object[][] getTestData(String sheetName) throws InvalidFormatException {
 
-		System.out.println("reading data from sheet: " + sheetName);
+		//System.out.println("reading data from sheet: " + sheetName);
 
 		Object data[][] = null;
 
 		try {
-			FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH);
+			FileInputStream ip = new FileInputStream(TEST_DATA_SHEET_PATH1);
 			book = WorkbookFactory.create(ip);
 			sheet = book.getSheet(sheetName);
 
 			data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+
+		//	System.err.println(sheet.getRow(0));
 
 			for (int i = 0; i < sheet.getLastRowNum(); i++) {
 				for (int j = 0; j < sheet.getRow(0).getLastCellNum(); j++) {
