@@ -17,14 +17,13 @@ public class lgp {
 	private By sendotpbutton = By.xpath("//button[@id=\"kt_sign_in_submit\"]");
 	private By Otpfield = By.xpath("//input[@onkeypress=\"if(this.value.length==4) return false;\"]");
 	private By verifyOTP = By.xpath("//button[@id=\"kt_sign_in_submit\"]");
-	private By firstuser = By.xpath("(//div[@class=\"border border-hover-primary p-7 rounded mb-7\"])[1]");
-
+	
 
 //after enter date Next page
    private By AfterverifyOTP=By.xpath("//h1[@class=\"d-flex justify-content-center align-items-center mb-3\"]");
    
-   public lgp(WebDriver driver1) {
-	   this.driver=driver1;
+   public lgp(WebDriver driver) {
+	   this.driver=driver;
 	   eleUtil=new ElementUtil(driver);
    }
  
