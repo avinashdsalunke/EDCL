@@ -44,6 +44,7 @@ public class Dashboardheadertest extends BaseTest {
 		List<String>actcn=DH.getheaderList();
 		
 		System.out.println("am"+ actcn);
+		System.out.println("mgmg");
 		Assert.assertEquals(actcn.size(),Constant.ACCOUNTS_PAGE_HEADERS_COUNT1);
 		Assert.assertEquals(actcn, Constant.EXPECTED_ACCOUNTS_PAGE_HEADERS_LIST1);
 	}
